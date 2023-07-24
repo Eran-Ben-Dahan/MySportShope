@@ -1,9 +1,8 @@
 ﻿namespace MySportShope.API.Models.DTO
 {
-    public class Category
+    public class Size
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public  List <SubCategory> SubCategorys { get; set; }
     }
 }
