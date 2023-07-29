@@ -19,7 +19,7 @@ namespace MySportShope.API.Context
         public DbSet<Orders> Orderss { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ShippingAddres> ShippingAddres { get; set; }
-        public DbSet<Size> Sizes { get; set; }
+        public DbSet<ItemSize> Sizes { get; set; }
         public DbSet<SubCategory> SubCategorys { get; set; }
         public DbSet<User> Users { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
