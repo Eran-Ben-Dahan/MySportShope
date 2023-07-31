@@ -8,12 +8,11 @@ namespace MySportShope.API.Models.DTO
         public string Name { get; set; }
         public string Description { get; set; }
         public string Manufacturer { get; set; }
-        public string Type { get; set; }
-        public string PersoneType { get; set; }
-        public List<ItemSize> ItemSizesID { get; set; }
-        public List<Color> ColorsID { get; set; }
+        public IList<PersoneType> PersoneTypes { get; set; }
+        public IList<ItemSize> ItemSizesID { get; set; }
+        public IList<Color> ColorsID { get; set; }
         public int CategoryID { get; set; }
-        public List<Image> ImagesID  { get; set; }
+        public IList<Image> ImagesID  { get; set; }
         public int BoxSizeID { get; set; }
     }
 }

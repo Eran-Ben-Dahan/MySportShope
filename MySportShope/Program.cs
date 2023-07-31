@@ -17,12 +17,17 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+//This code makes sure the DB is up to data evry time the API starts
+using(var scope = app.Services.CreateScope())
+{
+    var context=scope.ServiceProvider.GetRequiredService<MainContext>();    
+    context.Database.Migrate();
+}
 
+
+// Configure the HTTP request pipeline.
     app.UseSwagger();
     app.UseSwaggerUI();
-
-
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

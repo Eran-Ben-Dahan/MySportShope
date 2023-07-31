@@ -4,11 +4,11 @@ using MySportShope.API.Models.Enums;
 
 namespace MySportShope.API.Context
 {
-    public class MainContext:DbContext
+    public class MainContext : DbContext
     {
-        public MainContext(DbContextOptions<MainContext> options):base(options) 
+        public MainContext(DbContextOptions<MainContext> options) : base(options)
         {
-           
+
         }
         public DbSet<BoxSize> BoxSizes { get; set; }
         public DbSet<Category> Categorys { get; set; }
@@ -22,6 +22,7 @@ namespace MySportShope.API.Context
         public DbSet<ItemSize> Sizes { get; set; }
         public DbSet<SubCategory> SubCategorys { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Payment> Payments { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
