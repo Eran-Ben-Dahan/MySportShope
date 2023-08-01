@@ -11,5 +11,7 @@ namespace MySportShope.API.Models.DTO
         public int ShippingAddresID { get; set; }
         public DateTime OrderDate { get; set; }
         public int SpecialDiscount{ get; set; }
+        public int PaymentID { get; set; }
+        
     }
 }
