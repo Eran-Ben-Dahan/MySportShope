@@ -2,11 +2,12 @@
 {
     public class Payment
     {
-        public int Id { get; set; }
-        public List<Orders> Orders { get; set; }
+        public int ID { get; set; }
         public DateTime PaymentDate { get; set; }
-
-        //Need to add more information like 3 num on back card
+        public int CardNumber { get; set; }
+        public int CardMonth { get; set; }
+        public int CardYear { get; set; }
+        public int CardCvv { get; set; }
 
     }
 }

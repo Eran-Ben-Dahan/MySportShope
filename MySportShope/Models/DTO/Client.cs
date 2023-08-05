@@ -8,7 +8,6 @@
         public string Email { get; set; }
         public DateTime BDay { get; set; }
         public int PhoneNumber { get; set; }
-        public int UserID { get; set; }
         public List<Orders> Orders { get; set; }
 
 

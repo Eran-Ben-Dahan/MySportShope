@@ -9,7 +9,6 @@ namespace MySportShope.API.Models.DTO
         public string Password { get; set; }
         public UserType Type { get; set; }
         public DateTime LastLogin { get; set; }
-
         public int ClientID { get; set; }
     }
 }

@@ -5,7 +5,6 @@ namespace MySportShope.API.Models.DTO
 {
     public class OrderItem
     {
-        public int ID { get; set; }
         public int OrdersID { get; set; }
         public int productID { get; set; }
         public int Quantity { get; set; }
