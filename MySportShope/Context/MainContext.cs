@@ -76,9 +76,9 @@ namespace MySportShope.API.Context
                 new ItemSize { ID = 1, SizeName = "49", ProductID = 1 }
                 );
             modelBuilder.Entity<OrderItem>().HasData(
-                new OrderItem { OrdersID = 1, productID = 1, Price = 25.5, Quantity = 2 },
-                new OrderItem { OrdersID = 1, productID = 2, Price = 25.5, Quantity = 2 },
-                new OrderItem { OrdersID = 2, productID = 2, Price = 25.5, Quantity = 2 }
+                new OrderItem { ID = 1, OrdersID = 1, productID = 1, Price = 25.5, Quantity = 2 },
+                new OrderItem { ID = 2, OrdersID = 1, productID = 2, Price = 25.5, Quantity = 2 },
+                new OrderItem { ID = 3, OrdersID = 2, productID = 2, Price = 25.5, Quantity = 2 }
                 );
             modelBuilder.Entity<Orders>().HasData(
                 new Orders { ID = 1, ClientID = 1, ShippingAddresID = 1, PaymentID = 1, OrderDate = DateTime.Now, SpecialDiscount = 0 },
@@ -101,15 +101,13 @@ namespace MySportShope.API.Context
                 );
 
             modelBuilder.Entity<ShippingAddres>().HasData(
-                new ShippingAddres {ID=1,Building=13,City="Netanya",Country="Israel",House=5,StreetName="Rotem",Zip=5677 }
+                new ShippingAddres { ID = 1, Building = 13, City = "Netanya", Country = "Israel", House = 5, StreetName = "Rotem", Zip = 5677 }
                 );
 
             modelBuilder.Entity<SubCategory>().HasData(
-                new SubCategory { ID = 1,CategoryID=1,Name= "Running shoes" }, 
-                new SubCategory { ID = 2,CategoryID=1,Name= "Basketball shoes" }
+                new SubCategory { ID = 1, CategoryID = 1, Name = "Running shoes" },
+                new SubCategory { ID = 2, CategoryID = 1, Name = "Basketball shoes" }
             );
-
-
 
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 
@@ -11,9 +12,8 @@ namespace MySportShope.API.Models.DTO
         public int ShippingAddresID { get; set; }
         public int PaymentID { get; set; }
         public DateTime OrderDate { get; set; }
-        public int SpecialDiscount{ get; set; }
-        public List<OrderItem> OrderItems { get; set; } 
-
+        public int SpecialDiscount { get; set; } 
+        public List<OrderItem> OrderItems { get; set; }
 
     }
 }
