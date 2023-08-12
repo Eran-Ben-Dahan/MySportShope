@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
-using MySportShope.API.Context;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 
 namespace MySportShope.API.Repositories
 {
