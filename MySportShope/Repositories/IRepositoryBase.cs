@@ -2,7 +2,7 @@
 
 namespace MySportShope.API.Repositories
 {
-    public interface IRepositoriesBase<T>
+    public interface IRepositoryBase<T>
     {
         IQueryable<T> FindAll();
         IQueryable<T> FindByCodition(Expression<Func<T, bool>> condition);
