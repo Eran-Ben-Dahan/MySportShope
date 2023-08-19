@@ -9,7 +9,5 @@
         public DateTime BDay { get; set; }
         public int PhoneNumber { get; set; }
         public List<Orders> Orders { get; set; }
-
-
     }
 }

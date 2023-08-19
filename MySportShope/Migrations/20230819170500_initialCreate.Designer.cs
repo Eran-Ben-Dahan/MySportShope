@@ -12,8 +12,8 @@ using MySportShope.API.Context;
 namespace MySportShope.API.Migrations
 {
     [DbContext(typeof(MainContext))]
-    [Migration("20230805155852_updat3")]
-    partial class updat3
+    [Migration("20230819170500_initialCreate")]
+    partial class initialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,14 +29,26 @@ namespace MySportShope.API.Migrations
                     b.Property<int>("ColorsID")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductsID")
+                    b.Property<int>("ProductID")
                         .HasColumnType("int");
 
-                    b.HasKey("ColorsID", "ProductsID");
+                    b.HasKey("ColorsID", "ProductID");
 
-                    b.HasIndex("ProductsID");
+                    b.HasIndex("ProductID");
 
                     b.ToTable("ColorProduct");
+
+                    b.HasData(
+                        new
+                        {
+                            ColorsID = 1,
+                            ProductID = 1
+                        },
+                        new
+                        {
+                            ColorsID = 2,
+                            ProductID = 1
+                        });
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.BoxSize", b =>
@@ -67,6 +79,35 @@ namespace MySportShope.API.Migrations
                     b.HasIndex("ProductID");
 
                     b.ToTable("BoxSizes");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Height = 2.5,
+                            Length = 10.0,
+                            ProductID = 1,
+                            Weight = 5.0,
+                            Width = 5.0
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Height = 3.0,
+                            Length = 8.0,
+                            ProductID = 2,
+                            Weight = 3.0,
+                            Width = 4.0
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Height = 1.0,
+                            Length = 10.0,
+                            ProductID = 3,
+                            Weight = 5.0,
+                            Width = 9.0
+                        });
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.Category", b =>
@@ -86,9 +127,21 @@ namespace MySportShope.API.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("PersoneTypeID");
-
                     b.ToTable("Categorys");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Name = "Shoes",
+                            PersoneTypeID = 1
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Name = "Sportswear",
+                            PersoneTypeID = 1
+                        });
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.Client", b =>
@@ -120,6 +173,17 @@ namespace MySportShope.API.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Clients");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            BDay = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "eran0099@gmail.com",
+                            FirstName = "Eran",
+                            LastName = "Ben Dahan",
+                            PhoneNumber = 548050910
+                        });
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.Color", b =>
@@ -137,15 +201,27 @@ namespace MySportShope.API.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Colors");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Name = "Red"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Name = "yellow"
+                        });
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.Image", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
                     b.Property<string>("Alt")
                         .IsRequired()
@@ -170,11 +246,23 @@ namespace MySportShope.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.HasIndex("ProductID");
 
                     b.ToTable("Images");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Alt = "Black Sport Shoes ",
+                            Description = "A beautiful and comfortable shoe",
+                            Name = "Sport Shoes ",
+                            ProductID = 1,
+                            Title = "Shoes",
+                            URL = "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/88c3280a-1b77-4cf9-957f-d71b91e90393/revolution-6-road-running-shoes-sP4fgd.png"
+                        });
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.ItemSize", b =>
@@ -185,18 +273,26 @@ namespace MySportShope.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("ProductID")
                         .HasColumnType("int");
+
+                    b.Property<string>("SizeName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
                     b.HasIndex("ProductID");
 
                     b.ToTable("Sizes");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            ProductID = 1,
+                            SizeName = "49"
+                        });
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.OrderItem", b =>
@@ -221,7 +317,37 @@ namespace MySportShope.API.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("OrdersID");
+
+                    b.HasIndex("productID");
+
                     b.ToTable("OrderItems");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            OrdersID = 1,
+                            Price = 25.5,
+                            Quantity = 2,
+                            productID = 1
+                        },
+                        new
+                        {
+                            ID = 2,
+                            OrdersID = 1,
+                            Price = 25.5,
+                            Quantity = 2,
+                            productID = 2
+                        },
+                        new
+                        {
+                            ID = 3,
+                            OrdersID = 2,
+                            Price = 25.5,
+                            Quantity = 2,
+                            productID = 2
+                        });
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.Orders", b =>
@@ -251,25 +377,66 @@ namespace MySportShope.API.Migrations
 
                     b.HasIndex("ClientID");
 
-                    b.HasIndex("PaymentID");
-
                     b.ToTable("Orderss");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            ClientID = 1,
+                            OrderDate = new DateTime(2023, 8, 19, 20, 4, 59, 886, DateTimeKind.Local).AddTicks(4095),
+                            PaymentID = 1,
+                            ShippingAddresID = 1,
+                            SpecialDiscount = 0
+                        },
+                        new
+                        {
+                            ID = 2,
+                            ClientID = 1,
+                            OrderDate = new DateTime(2023, 8, 19, 20, 4, 59, 886, DateTimeKind.Local).AddTicks(4108),
+                            PaymentID = 1,
+                            ShippingAddresID = 1,
+                            SpecialDiscount = 0
+                        });
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.Payment", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<int>("CardCvv")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CardMonth")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CardNumber")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CardYear")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("PaymentDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.ToTable("Payments");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            CardCvv = 123,
+                            CardMonth = 2,
+                            CardNumber = 134456775,
+                            CardYear = 2024,
+                            PaymentDate = new DateTime(2023, 8, 19, 20, 4, 59, 886, DateTimeKind.Local).AddTicks(4122)
+                        });
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.PersoneType", b =>
@@ -284,14 +451,31 @@ namespace MySportShope.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ProductID")
-                        .HasColumnType("int");
-
                     b.HasKey("ID");
 
-                    b.HasIndex("ProductID");
-
                     b.ToTable("PersoneTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Name = "Men"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Name = "Women"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Name = "Kids"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Name = "Men & Women"
+                        });
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.Product", b =>
@@ -314,14 +498,48 @@ namespace MySportShope.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("PersoneTypeID")
+                        .HasColumnType("int");
+
                     b.Property<int>("SubCategoryID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
+                    b.HasIndex("PersoneTypeID");
+
                     b.HasIndex("SubCategoryID");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Description = "A beautiful and comfortable shoe",
+                            Manufacturer = "Nike",
+                            Name = "Sport Shoes ",
+                            PersoneTypeID = 1,
+                            SubCategoryID = 1
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Description = "Butebull Tshert",
+                            Manufacturer = "Nike",
+                            Name = "Sport Tshert ",
+                            PersoneTypeID = 1,
+                            SubCategoryID = 1
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Description = "Ball",
+                            Manufacturer = "Nike",
+                            Name = "Ball ",
+                            PersoneTypeID = 1,
+                            SubCategoryID = 1
+                        });
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.ShippingAddres", b =>
@@ -356,6 +574,18 @@ namespace MySportShope.API.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("ShippingAddres");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Building = 13,
+                            City = "Netanya",
+                            Country = "Israel",
+                            House = 5,
+                            StreetName = "Rotem",
+                            Zip = 5677
+                        });
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.SubCategory", b =>
@@ -378,6 +608,20 @@ namespace MySportShope.API.Migrations
                     b.HasIndex("CategoryID");
 
                     b.ToTable("SubCategorys");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            CategoryID = 1,
+                            Name = "Running shoes"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            CategoryID = 1,
+                            Name = "Basketball shoes"
+                        });
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.User", b =>
@@ -408,6 +652,17 @@ namespace MySportShope.API.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            ClientID = 0,
+                            LastLogin = new DateTime(2023, 8, 19, 20, 4, 59, 885, DateTimeKind.Local).AddTicks(3418),
+                            Password = "1234",
+                            Type = 999,
+                            Username = "Eran"
+                        });
                 });
 
             modelBuilder.Entity("ColorProduct", b =>
@@ -420,7 +675,7 @@ namespace MySportShope.API.Migrations
 
                     b.HasOne("MySportShope.API.Models.DTO.Product", null)
                         .WithMany()
-                        .HasForeignKey("ProductsID")
+                        .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -430,15 +685,6 @@ namespace MySportShope.API.Migrations
                     b.HasOne("MySportShope.API.Models.DTO.Product", null)
                         .WithMany("BoxSizes")
                         .HasForeignKey("ProductID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Category", b =>
-                {
-                    b.HasOne("MySportShope.API.Models.DTO.PersoneType", null)
-                        .WithMany("Categorys")
-                        .HasForeignKey("PersoneTypeID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -461,6 +707,21 @@ namespace MySportShope.API.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("MySportShope.API.Models.DTO.OrderItem", b =>
+                {
+                    b.HasOne("MySportShope.API.Models.DTO.Orders", null)
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrdersID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MySportShope.API.Models.DTO.Product", null)
+                        .WithMany("OrderItems")
+                        .HasForeignKey("productID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("MySportShope.API.Models.DTO.Orders", b =>
                 {
                     b.HasOne("MySportShope.API.Models.DTO.Client", null)
@@ -468,23 +729,16 @@ namespace MySportShope.API.Migrations
                         .HasForeignKey("ClientID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("MySportShope.API.Models.DTO.Payment", null)
-                        .WithMany("Orders")
-                        .HasForeignKey("PaymentID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("MySportShope.API.Models.DTO.PersoneType", b =>
-                {
-                    b.HasOne("MySportShope.API.Models.DTO.Product", null)
-                        .WithMany("PersoneTypes")
-                        .HasForeignKey("ProductID");
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.Product", b =>
                 {
+                    b.HasOne("MySportShope.API.Models.DTO.PersoneType", null)
+                        .WithMany("Products")
+                        .HasForeignKey("PersoneTypeID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("MySportShope.API.Models.DTO.SubCategory", null)
                         .WithMany("Products")
                         .HasForeignKey("SubCategoryID")
@@ -511,14 +765,14 @@ namespace MySportShope.API.Migrations
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Payment", b =>
+            modelBuilder.Entity("MySportShope.API.Models.DTO.Orders", b =>
                 {
-                    b.Navigation("Orders");
+                    b.Navigation("OrderItems");
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.PersoneType", b =>
                 {
-                    b.Navigation("Categorys");
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.Product", b =>
@@ -529,7 +783,7 @@ namespace MySportShope.API.Migrations
 
                     b.Navigation("ItemSizes");
 
-                    b.Navigation("PersoneTypes");
+                    b.Navigation("OrderItems");
                 });
 
             modelBuilder.Entity("MySportShope.API.Models.DTO.SubCategory", b =>

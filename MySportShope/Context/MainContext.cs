@@ -32,6 +32,8 @@ namespace MySportShope.API.Context
                 new User { ID = 1, Username = "Eran", Password = "1234", LastLogin = DateTime.Now, Type = UserType.Admin }
                 );
 
+
+
             modelBuilder.Entity<BoxSize>().HasData(
                 new BoxSize { ID = 1, Height = 2.5, Length = 10, Weight = 5, Width = 5, ProductID = 1 },
                 new BoxSize { ID = 2, Height = 3, Length = 8, Weight = 3, Width = 4, ProductID = 2 },
@@ -97,7 +99,9 @@ namespace MySportShope.API.Context
             );
 
             modelBuilder.Entity<Product>().HasData(
-                new Product { ID = 1, Name = "Sport Shoes ", Manufacturer = "Nike", SubCategoryID = 1, PersoneTypeID = 1, Description = "A beautiful and comfortable shoe" }
+                new Product { ID = 1, Name = "Sport Shoes ", Manufacturer = "Nike", SubCategoryID = 1, PersoneTypeID = 1, Description = "A beautiful and comfortable shoe"},
+                new Product { ID = 2, Name = "Sport Tshert ", Manufacturer = "Nike", SubCategoryID = 1, PersoneTypeID = 1, Description = "Butebull Tshert"},
+                new Product { ID = 3, Name = "Ball ", Manufacturer = "Nike", SubCategoryID = 1, PersoneTypeID = 1, Description = "Ball" }
                 );
 
             modelBuilder.Entity<ShippingAddres>().HasData(
@@ -108,7 +112,7 @@ namespace MySportShope.API.Context
                 new SubCategory { ID = 1, CategoryID = 1, Name = "Running shoes" },
                 new SubCategory { ID = 2, CategoryID = 1, Name = "Basketball shoes" }
             );
-
+         
         }
     }
 }

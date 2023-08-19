@@ -6,6 +6,5 @@
         public string Name { get; set; }
         public List<SubCategory> SubCategorys { get; set; }
         public int PersoneTypeID { get; set; }
-
     }
 }

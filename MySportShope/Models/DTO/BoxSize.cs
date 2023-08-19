@@ -1,7 +1,11 @@
-﻿namespace MySportShope.API.Models.DTO
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MySportShope.API.Models.DTO
 {
+
     public class BoxSize
     {
+        [Key]
         public int ID { get; set; }
         public double Width { get; set; }
         public double Height { get; set; }
