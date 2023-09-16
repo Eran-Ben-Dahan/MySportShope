@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MySportShope.API.Context;
+using MySportShope.API.Repositories;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,21 +12,23 @@ builder.Services.AddDbContext<MainContext>(o =>
 });
 
 // Add services to the container.
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAuthentication("Bearer").AddJwtBearer(o =>
+
 {
     o.TokenValidationParameters = new()
     {
         ValidateIssuer = false,//Make it true
         ValidateAudience = false,//Make it true
         ValidateIssuerSigningKey = true,
-        ValidAudience = builder.Configuration["Authentication:Audience "],
-        ValidIssuer = builder.Configuration["Authentication::Issuer"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["Authentication:Secret"]))
+        ValidAudience = builder.Configuration["Authentication:Audience "] ?? throw new ArgumentException("Authentication:Audience"),
+        ValidIssuer = builder.Configuration["Authentication::Issuer"] ?? throw new ArgumentException("Authentication:Issuer"),
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["Authentication:Secret"] ?? throw new ArgumentException("Authentication:Secret")))
     };
 });
 
