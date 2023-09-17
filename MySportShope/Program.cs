@@ -12,6 +12,19 @@ builder.Services.AddDbContext<MainContext>(o =>
 });
 
 // Add services to the container.
+builder.Services.AddScoped<IBoxSizeRepository, BoxSizeRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IClientRepository, ClientRepository>();
+builder.Services.AddScoped<IColorRepository, ColorRepository>();
+builder.Services.AddScoped<IImageRepository, ImageRepository>();
+builder.Services.AddScoped<IItemSizeRepository, ItemSizeRepository>();
+builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
+builder.Services.AddScoped<IOrdersRepository, OrdersRepository>();
+builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+builder.Services.AddScoped<IPersoneTypeRepository, PersoneTypeRepository>();
+builder.Services.AddScoped<ProductRepository, ProductRepository>();
+builder.Services.AddScoped<IShippingAddresRepository, ShippingAddresRepository>();
+builder.Services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddControllers();

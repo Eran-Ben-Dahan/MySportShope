@@ -2,11 +2,8 @@
 
 namespace MySportShope.API.Repositories
 {
-    public interface IProductTypeRepository : IRepositoryBase<Product>
+    public interface IProductRepository : IRepositoryBase<Product> 
     {
     }
-
-
-
 
 }
