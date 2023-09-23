@@ -5,7 +5,7 @@ namespace MySportShope.API.Models.DTO
 {
     public class Product
     {
-        [Key]
+        //[Key]
         public int ID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

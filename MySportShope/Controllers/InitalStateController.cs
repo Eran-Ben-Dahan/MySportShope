@@ -52,7 +52,7 @@ namespace MySportShope.API.Controllers
             this.ordersRepository = ordersRepository ?? throw new ArgumentNullException(nameof(ordersRepository));
             this.PaymentRepository = PaymentRepository ?? throw new ArgumentNullException(nameof(PaymentRepository));
             this.personeTypeRepository = personeTypeRepository ?? throw new ArgumentNullException(nameof(personeTypeRepository));
-            this.productRepository=productRepository??throw new ArgumentNullException(nameof(productRepository));
+            this.productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
             this.shippingAddresRepository = shippingAddresRepository ?? throw new ArgumentNullException(nameof(shippingAddresRepository));
             this.subCategoryRepository = subCategoryRepository ?? throw new ArgumentNullException(nameof(subCategoryRepository));
         }
