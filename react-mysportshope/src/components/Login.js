@@ -1,14 +1,44 @@
 import React from "react";
 import { useState } from "react";
+import api from "../utils/api"
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [username, setusername] = useState('');
-    const [password, setpassword] = useState('')
+    const [password, setpassword] = useState('');
+    const [error, setError] = useState("");
+    const nav=useNavigate();
 
     const hendleSubmit=(e)=>{
         e.preventDefault();
-    }
+
+        const loginData= {
+        username,
+        password,
+    };
+
+    api.post('Login',loginData).then
+    ((result)=>{
+      if(result.status===200){
+        localStorage.setItem("My_token", result.data);
+        console.log("Logged in-success");
+        nav("/backoffice")
+      } else{
+
+        localStorage.setItem("My_token", "");
+        console.log("Logged in- not success");
+        setError(`could not login(${result.status})`);
+      }
+
+    })
+    .catch((ex)=>{
+      localStorage.setItem("My_token", "");
+      setError(ex);
+      console.error(ex);
+    })
+    };
   return (
+    <>
     <form onSubmit={hendleSubmit}>
       <label>
         Username:
@@ -16,10 +46,12 @@ const Login = () => {
       </label><br/>
 
       <label>password:
-        <input type="text" value={password} placeholder="password" onChange={e=>setpassword(e.target.value)} />
+        <input type="password" value={password} placeholder="password" onChange={e=>setpassword(e.target.value)} />
       </label><br/>
-      <button>Login</button>
+      <button type="submit">Login</button>
     </form>
+    {error !== "" ?? <h3>Error during login</h3>}
+    </>
   );
 };
 

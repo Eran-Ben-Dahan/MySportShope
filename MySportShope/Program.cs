@@ -45,8 +45,14 @@ builder.Services.AddAuthentication("Bearer").AddJwtBearer(o =>
     };
 });
 
+builder.Services.AddCors((o) =>
+{
+    o.AddPolicy("open", b =>
+    b.AllowAnyHeader()
+    .AllowAnyOrigin()
+    .AllowAnyMethod());
+});
 var app = builder.Build();
-
 //This code makes sure the DB is up to data evry time the API starts
 using (var scope = app.Services.CreateScope())
 {
@@ -61,7 +67,7 @@ app.UseSwaggerUI();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
+app.UseCors("open");
 app.MapControllers();
 
 app.Run();
