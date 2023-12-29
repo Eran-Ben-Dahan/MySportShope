@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MySportShope.API.Models.DTO;
 using MySportShope.API.Repositories;
 
@@ -19,7 +20,8 @@ namespace MySportShope.API.Controllers
         [HttpGet]
         public IActionResult Getall()
         {
-            var result = _repo.FindAll().ToList();
+
+            var result = _repo.FindAll().Include(p=>p.Images).Include(p=>p.OrderItems).ToList();
             return Ok(result);
         }
         [HttpGet("{id:int}")]

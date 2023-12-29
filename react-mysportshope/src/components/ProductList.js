@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 function ProductList() {
   const [items, setitems] = useState([]);
+
   useEffect(() => {
     api
       .get("Product")
@@ -15,42 +16,45 @@ function ProductList() {
       })
       .catch((ex) => console.error(ex));
   }, []);
+ 
   return (
     <>
       <h3>product List</h3>
-      <Button as={Link} to="new">Add New</Button>
+      <Button as={Link} to="new">
+        Add New
+      </Button>
       <Table striped bordered>
         <thead>
           <tr>
-          <th>ID</th>
-          <th>Name</th>
-          {/* <th>Description</th> */}
-          <th>Manufacturer</th>
-          {/* <th>ItemSizes</th> */}
-          <th>Colors</th>
-          {/* <th>SubCategory</th> */}
-          <th>Images</th>
-          {/* <th>BoxSizes</th> */}
-          {/* <th>PersoneType</th> */}
-          {/* <th>OrderItems</th> */}
+            <th>ID</th>
+            <th>Name</th>
+            {/* <th>Description</th> */}
+            <th>Manufacturer</th>
+            {/* <th>ItemSizes</th> */}
+            <th>Colors</th>
+            {/* <th>SubCategory</th> */}
+            <th>Images</th>
+            <th>price</th>
+            {/* <th>BoxSizes</th> */}
+            {/* <th>PersoneType</th> */}
+            {/* <th>OrderItems</th> */}
           </tr>
         </thead>
         <tbody>
-          {items.map((items) => (
-            <tr key={items.id}>
-              <td>{items.id}</td>
-              <td>{items.name}</td>
-              <td>{items.manufacturer}</td>
-              <td>{items.colors}</td>
-              <td>{items.image}</td>
+          {items.map((p) => (
+            <tr key={p.id}>
+              <td>{p.id}</td>
+              <td>{p.name}</td>
+              <td>{p.manufacturer}</td>
+              <td>{p.image}</td>
               <td>
-                <Button as={Link} to={`edit/${items.id}`} >Edit</Button>
-                <Button >Delete</Button>
-                
-                </td>
-
+                <Button as={Link} to={`edit/${items.id}`}>  Edit </Button>
+                <Button>Delete</Button>
+              </td>
             </tr>
           ))}
+
+
         </tbody>
       </Table>
     </>
