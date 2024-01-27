@@ -1,0 +1,174 @@
+.navbar {
+  height: 80px;
+  font-size: 30px;
+  background-color: #17232e;
+  z-index: 12;
+
+}
+.navbarToggle {
+  background-color: white;
+}
+.logoIcon {
+  font-size: 60px;
+  position: absolute;
+  left: 40px;
+  top: 10px;
+}
+.text-muted {
+  font-size: 30px;
+}
+
+.BtnDarkMode {
+  position: absolute;
+  right: 180px;
+}
+.login {
+  position: absolute;
+  right: 40px;
+}
+.nav-item > a {
+  color: white;
+}
+.TopNavLink {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 1500px) {
+  .NavbarCollapse {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+  }
+}
+
+@media (max-width: 1300px) {
+  .navbar {
+    height: 160px;
+    font-size: 30px;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    font-size: 33px;
+    align-content: flex-end;
+   
+  }
+  .logoIcon {
+    font-size: 60px;
+  }
+  .BtnDarkMode {
+    position: absolute;
+    left: 20px;
+    top: 80px;
+  }
+  .login {
+    position: absolute;
+    left: 100px;
+    width: 109px;
+    top: 80px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar-expand-lg .navbar-collapse {
+   margin-left: 10px;
+   font-size: 26px;
+   
+  }
+}
+
+@media (max-width: 990px) {
+  .navbarToggle {
+    background-color: white;
+    margin-top: 15px;
+  }
+  .NavbarCollapse {
+    align-content: flex-end;
+   padding-right: 17px;
+    padding-bottom: 30px;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    font-size: 20px;
+    margin-top: 10px;
+   
+  }
+  .navbar-nav {
+    background-color: rgba(255, 255, 255, 0.144);
+    border-radius: 15px;
+    padding: 5px;
+   
+  }
+  .container {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: flex-end;
+    flex-direction: column;
+    
+  }
+  .navbar-toggler {
+    background-color: white;
+    position: absolute;
+    right: 10px;
+    top: 81px;
+    
+  }
+  .navbar-collapse{
+    position: absolute ;
+    right: 10px;
+    top: 130px;
+    position: fixed;
+    left: 0px;
+    width: 100px;
+    background: #17232e;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(250px at 90% 20%);
+    transition: all is ease-in;
+
+ 
+  }
+}
+@media (max-width: 300px) {
+  .navbar-toggler {
+    background-color: white;
+    position: absolute;
+    left: 20px;
+    top: 223px;
+    width: 56px;
+  }
+  .navbar-collapse {
+    position: fixed;
+  left: -10px;
+    top: 210px;
+    width: 100px;
+    background: #17232e;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(355px at 90% 20%);
+    transition: all is ease-out; 
+  }
+  .BtnDarkMode {
+    position: absolute;
+    left: 20px;
+    top: 125px;
+  }
+  .login {
+    position: absolute;
+    left: 20px;
+    width: 109px;
+    top: 80px;
+  }
+  .navbar {
+    height: 270px;
+  }
+  .NavbarCollapse {
+    flex-wrap: nowrap;
+    
+    padding-right: 17px;
+    padding-bottom: 30px;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    margin-top: 60px;
+}
+}

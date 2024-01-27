@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
-import SidePanel from "./SidePanel";
+import SidePanel from "../SidePanel/SidePanel";
 
 function BackOffice() {
   return (
