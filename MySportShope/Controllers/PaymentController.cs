@@ -9,18 +9,20 @@ namespace MySportShope.API.Controllers
     public class PaymentController : Controller
     {
         private readonly IPaymentRepository _repo;
-      
+
 
         public PaymentController(IPaymentRepository _repo)
         {
-           
+
             this._repo = _repo ?? throw new ArgumentNullException(nameof(_repo));
         }
         [HttpGet]
         public IActionResult Getall()
         {
             var result = _repo.FindAll().ToList();
+
             return Ok(result);
+
         }
         [HttpGet("{id:int}")]
         public IActionResult GetByID(int id)
@@ -58,8 +60,8 @@ namespace MySportShope.API.Controllers
         [HttpDelete("{id:int}")]
         public IActionResult Delet(int id)
         {
-            var user = _repo.FindByCodition(u => u.ID == id).FirstOrDefault ();
-            if (user==null)
+            var user = _repo.FindByCodition(u => u.ID == id).FirstOrDefault();
+            if (user == null)
             {
                 return NotFound();
             }

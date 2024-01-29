@@ -6,6 +6,7 @@
         public List<Product> Products { get; set; }
         public int CategoryID { get; set; }
         public string Name { get; set; }
+        public Category? Category { get; set; }
 
     }
 }
