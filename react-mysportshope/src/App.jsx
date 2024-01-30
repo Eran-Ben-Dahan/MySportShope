@@ -9,6 +9,7 @@ import ProductForm from "./components/ProductForm/ProductForm";
 // import { useSelector } from "react-redux";
 import React from "react";
 import NavBar from "./components/nav/NavBar";
+import About from "./pages/About/About";
 
 
 function App() {
@@ -25,7 +26,6 @@ function App() {
   return (
     <div>
         <NavBar />
-        <h1>welcome to my site</h1>
         <Routes>
           <Route path="/Login" element={<Login />} />
           <Route path="*" element={<div>Home</div>} />
@@ -34,6 +34,7 @@ function App() {
             <Route path="product/new" element={<ProductForm />} />
             <Route path="product/edit/:id" element={<ProductForm />} />
           </Route>
+          <Route path="/about" element={<About/>} />
         </Routes>
       
     </div>

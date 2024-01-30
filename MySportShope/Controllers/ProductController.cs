@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MySportShope.API.Migrations;
+using MySportShope.API.Models;
 using MySportShope.API.Models.DTO;
 using MySportShope.API.Repositories;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MySportShope.API.Controllers
 {
@@ -40,6 +43,31 @@ namespace MySportShope.API.Controllers
             var result = _repo.Create(item);
             return Created("user", result);
         }
+        //[HttpPost]
+        //public IActionResult Creatr( Product item)
+        //{
+        //    if (item == null)
+        //    {
+        //        return BadRequest("Invalid data");
+        //    }
+        //    var newItem = new ProductDTO()
+        //    {
+        //        ID = item.ID,
+        //        Name = item.Name,
+        //        Description = item.Description,
+        //        Manufacturer = item.Manufacturer,
+        //        SubCategoryID = item.SubCategoryID,
+        //        SubCategory = item.SubCategory,
+        //        Images = item.Images,
+        //        PersoneTypeID = item.PersoneTypeID,
+        //        Price = item.Price,
+        //    };
+        //    var createdProduct = _repo.Create(newItem);
+
+            // Assuming createdProduct is the created product, modify the Created method accordingly
+        //    return Created( "user", createdProduct);
+        //}
+
         [HttpPut]
         public IActionResult Update(Product item)
         {

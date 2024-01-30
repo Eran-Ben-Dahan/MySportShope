@@ -1,0 +1,90 @@
+/* Login.css */
+
+/* Option 1: Mint Green and Coral */
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #000000; /* Coral border color */
+    border-radius: 5px;
+    background-color: #f0fff0; /* Mint Green background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #2f4f4f; /* Dark Slate Gray label text color */
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #583838; /* Light Sea Green input border color */
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .login-button {
+    background-color: #5947ff; /* Tomato button background color */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: #070505; /* Crimson button background color on hover */
+  }
+  
+  .error-message {
+    color: #000000; /* Dark Red error message text color */
+    margin-top: 15px;
+  }
+  
+  /* Option 2: Purple and Gold */
+  .login-container-purple {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ffd700; /* Gold border color */
+    border-radius: 5px;
+    background-color: #8a2be2; /* Blue Violet background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-form-purple label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff; /* White label text color */
+  }
+  
+  .login-form-purple input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #daa520; /* Goldenrod input border color */
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .login-button-purple {
+    background-color: #800080; /* Purple button background color */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-button-purple:hover {
+    background-color: #4b0082; /* Indigo button background color on hover */
+  }
+  
+  .error-message-purple {
+    color: #b22222; /* Firebrick error message text color */
+    margin-top: 15px;
+  }
+  

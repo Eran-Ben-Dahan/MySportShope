@@ -49,7 +49,7 @@ namespace MySportShope.API.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.BoxSize", b =>
+            modelBuilder.Entity("MySportShope.API.Models.BoxSize", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -108,7 +108,7 @@ namespace MySportShope.API.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Category", b =>
+            modelBuilder.Entity("MySportShope.API.Models.Category", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -142,7 +142,7 @@ namespace MySportShope.API.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Client", b =>
+            modelBuilder.Entity("MySportShope.API.Models.Client", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -184,7 +184,7 @@ namespace MySportShope.API.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Color", b =>
+            modelBuilder.Entity("MySportShope.API.Models.Color", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -213,7 +213,7 @@ namespace MySportShope.API.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Image", b =>
+            modelBuilder.Entity("MySportShope.API.Models.Image", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -262,7 +262,7 @@ namespace MySportShope.API.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.ItemSize", b =>
+            modelBuilder.Entity("MySportShope.API.Models.ItemSize", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -292,7 +292,7 @@ namespace MySportShope.API.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.OrderItem", b =>
+            modelBuilder.Entity("MySportShope.API.Models.OrderItem", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -347,7 +347,7 @@ namespace MySportShope.API.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Orders", b =>
+            modelBuilder.Entity("MySportShope.API.Models.Orders", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -381,7 +381,7 @@ namespace MySportShope.API.Migrations
                         {
                             ID = 1,
                             ClientID = 1,
-                            OrderDate = new DateTime(2024, 1, 29, 21, 8, 35, 238, DateTimeKind.Local).AddTicks(1061),
+                            OrderDate = new DateTime(2024, 1, 29, 22, 59, 26, 450, DateTimeKind.Local).AddTicks(1986),
                             PaymentID = 1,
                             ShippingAddresID = 1,
                             SpecialDiscount = 0
@@ -390,14 +390,14 @@ namespace MySportShope.API.Migrations
                         {
                             ID = 2,
                             ClientID = 1,
-                            OrderDate = new DateTime(2024, 1, 29, 21, 8, 35, 238, DateTimeKind.Local).AddTicks(1128),
+                            OrderDate = new DateTime(2024, 1, 29, 22, 59, 26, 450, DateTimeKind.Local).AddTicks(2039),
                             PaymentID = 1,
                             ShippingAddresID = 1,
                             SpecialDiscount = 0
                         });
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Payment", b =>
+            modelBuilder.Entity("MySportShope.API.Models.Payment", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -432,11 +432,11 @@ namespace MySportShope.API.Migrations
                             CardMonth = 2,
                             CardNumber = 134456775,
                             CardYear = 2024,
-                            PaymentDate = new DateTime(2024, 1, 29, 21, 8, 35, 238, DateTimeKind.Local).AddTicks(1147)
+                            PaymentDate = new DateTime(2024, 1, 29, 22, 59, 26, 450, DateTimeKind.Local).AddTicks(2060)
                         });
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.PersoneType", b =>
+            modelBuilder.Entity("MySportShope.API.Models.PersoneType", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -475,7 +475,7 @@ namespace MySportShope.API.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Product", b =>
+            modelBuilder.Entity("MySportShope.API.Models.Product", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -545,7 +545,7 @@ namespace MySportShope.API.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.ShippingAddres", b =>
+            modelBuilder.Entity("MySportShope.API.Models.ShippingAddres", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -591,7 +591,7 @@ namespace MySportShope.API.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.SubCategory", b =>
+            modelBuilder.Entity("MySportShope.API.Models.SubCategory", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -627,7 +627,7 @@ namespace MySportShope.API.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.User", b =>
+            modelBuilder.Entity("MySportShope.API.Models.User", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -661,7 +661,7 @@ namespace MySportShope.API.Migrations
                         {
                             ID = 1,
                             ClientID = 0,
-                            LastLogin = new DateTime(2024, 1, 29, 21, 8, 35, 236, DateTimeKind.Local).AddTicks(8813),
+                            LastLogin = new DateTime(2024, 1, 29, 22, 59, 26, 448, DateTimeKind.Local).AddTicks(6740),
                             Password = "1234",
                             Type = 999,
                             Username = "Eran"
@@ -670,79 +670,79 @@ namespace MySportShope.API.Migrations
 
             modelBuilder.Entity("ColorProduct", b =>
                 {
-                    b.HasOne("MySportShope.API.Models.DTO.Color", null)
+                    b.HasOne("MySportShope.API.Models.Color", null)
                         .WithMany()
                         .HasForeignKey("ColorsID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MySportShope.API.Models.DTO.Product", null)
+                    b.HasOne("MySportShope.API.Models.Product", null)
                         .WithMany()
                         .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.BoxSize", b =>
+            modelBuilder.Entity("MySportShope.API.Models.BoxSize", b =>
                 {
-                    b.HasOne("MySportShope.API.Models.DTO.Product", null)
+                    b.HasOne("MySportShope.API.Models.Product", null)
                         .WithMany("BoxSizes")
                         .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Image", b =>
+            modelBuilder.Entity("MySportShope.API.Models.Image", b =>
                 {
-                    b.HasOne("MySportShope.API.Models.DTO.Product", null)
+                    b.HasOne("MySportShope.API.Models.Product", null)
                         .WithMany("Images")
                         .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.ItemSize", b =>
+            modelBuilder.Entity("MySportShope.API.Models.ItemSize", b =>
                 {
-                    b.HasOne("MySportShope.API.Models.DTO.Product", null)
+                    b.HasOne("MySportShope.API.Models.Product", null)
                         .WithMany("ItemSizes")
                         .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.OrderItem", b =>
+            modelBuilder.Entity("MySportShope.API.Models.OrderItem", b =>
                 {
-                    b.HasOne("MySportShope.API.Models.DTO.Orders", null)
+                    b.HasOne("MySportShope.API.Models.Orders", null)
                         .WithMany("OrderItems")
                         .HasForeignKey("OrdersID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MySportShope.API.Models.DTO.Product", null)
+                    b.HasOne("MySportShope.API.Models.Product", null)
                         .WithMany("OrderItems")
                         .HasForeignKey("productID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Orders", b =>
+            modelBuilder.Entity("MySportShope.API.Models.Orders", b =>
                 {
-                    b.HasOne("MySportShope.API.Models.DTO.Client", null)
+                    b.HasOne("MySportShope.API.Models.Client", null)
                         .WithMany("Orders")
                         .HasForeignKey("ClientID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Product", b =>
+            modelBuilder.Entity("MySportShope.API.Models.Product", b =>
                 {
-                    b.HasOne("MySportShope.API.Models.DTO.PersoneType", null)
+                    b.HasOne("MySportShope.API.Models.PersoneType", null)
                         .WithMany("Products")
                         .HasForeignKey("PersoneTypeID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MySportShope.API.Models.DTO.SubCategory", "SubCategory")
+                    b.HasOne("MySportShope.API.Models.SubCategory", "SubCategory")
                         .WithMany("Products")
                         .HasForeignKey("SubCategoryID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -751,9 +751,9 @@ namespace MySportShope.API.Migrations
                     b.Navigation("SubCategory");
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.SubCategory", b =>
+            modelBuilder.Entity("MySportShope.API.Models.SubCategory", b =>
                 {
-                    b.HasOne("MySportShope.API.Models.DTO.Category", "Category")
+                    b.HasOne("MySportShope.API.Models.Category", "Category")
                         .WithMany("SubCategorys")
                         .HasForeignKey("CategoryID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -762,27 +762,27 @@ namespace MySportShope.API.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Category", b =>
+            modelBuilder.Entity("MySportShope.API.Models.Category", b =>
                 {
                     b.Navigation("SubCategorys");
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Client", b =>
+            modelBuilder.Entity("MySportShope.API.Models.Client", b =>
                 {
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Orders", b =>
+            modelBuilder.Entity("MySportShope.API.Models.Orders", b =>
                 {
                     b.Navigation("OrderItems");
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.PersoneType", b =>
+            modelBuilder.Entity("MySportShope.API.Models.PersoneType", b =>
                 {
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.Product", b =>
+            modelBuilder.Entity("MySportShope.API.Models.Product", b =>
                 {
                     b.Navigation("BoxSizes");
 
@@ -793,7 +793,7 @@ namespace MySportShope.API.Migrations
                     b.Navigation("OrderItems");
                 });
 
-            modelBuilder.Entity("MySportShope.API.Models.DTO.SubCategory", b =>
+            modelBuilder.Entity("MySportShope.API.Models.SubCategory", b =>
                 {
                     b.Navigation("Products");
                 });

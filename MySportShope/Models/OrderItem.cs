@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 
-namespace MySportShope.API.Models.DTO
+namespace MySportShope.API.Models
 {
     public class OrderItem
     {

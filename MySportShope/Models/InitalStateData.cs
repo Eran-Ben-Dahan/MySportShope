@@ -1,5 +1,4 @@
-﻿using MySportShope.API.Models.DTO;
-using MySportShope.API.Repositories;
+﻿using MySportShope.API.Repositories;
 
 namespace MySportShope.API.Models
 {

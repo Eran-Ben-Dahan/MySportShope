@@ -1,0 +1,11 @@
+html,body {
+  font-family: "PT Sans", sans-serif;
+  background-color: #201f1d;
+}
+
+li {
+  list-style-type: square;
+  margin-left: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}

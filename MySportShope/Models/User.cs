@@ -1,6 +1,6 @@
 ﻿using MySportShope.API.Models.Enums;
 
-namespace MySportShope.API.Models.DTO
+namespace MySportShope.API.Models
 {
     public class User
     {

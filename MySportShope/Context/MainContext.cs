@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MySportShope.API.Models.DTO;
+using MySportShope.API.Models;
 using MySportShope.API.Models.Enums;
 
 namespace MySportShope.API.Context

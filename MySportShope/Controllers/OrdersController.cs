@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MySportShope.API.Models.DTO;
+using MySportShope.API.Models;
 using MySportShope.API.Repositories;
 
 namespace MySportShope.API.Controllers

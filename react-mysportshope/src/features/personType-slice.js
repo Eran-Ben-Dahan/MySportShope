@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const initialState = {
   data: [],
-  status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
+  status: 'idle', 
   error: null,
 };
 

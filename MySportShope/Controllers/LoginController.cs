@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using MySportShope.API.Models;
-using MySportShope.API.Models.DTO;
 using MySportShope.API.Repositories;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;

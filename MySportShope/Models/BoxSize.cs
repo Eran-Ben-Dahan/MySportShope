@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MySportShope.API.Models.DTO
+namespace MySportShope.API.Models
 {
 
     public class BoxSize

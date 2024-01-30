@@ -1,15 +1,17 @@
-import React from "react";
-import { useState } from "react";
+
+
+import React, { useState } from "react";
 import api from "../../utils/api";
 import { useNavigate } from "react-router-dom";
+import "./Login.css"; // Import your custom CSS
 
 const Login = () => {
-  const [username, setusername] = useState("");
-  const [password, setpassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const nav = useNavigate();
+  const navigate = useNavigate();
 
-  const hendleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const loginData = {
@@ -22,46 +24,49 @@ const Login = () => {
       .then((result) => {
         if (result.status === 200) {
           localStorage.setItem("My_token", result.data);
-          nav("/backoffice");
+          navigate("/backoffice");
         } else {
           localStorage.setItem("My_token", "");
-          setError(`could not login(${result.status})`);
+          setError(`Could not login (${result.status})`);
         }
       })
       .catch((ex) => {
         localStorage.setItem("My_token", "");
-        setError(ex);
+        setError("Error during login");
         console.error(ex);
       });
   };
+
   return (
-    <>
-      <form onSubmit={hendleSubmit}>
+    <div className="login-container">
+      <form onSubmit={handleSubmit} className="login-form">
         <label>
           Username:
           <input
             type="text"
             value={username}
-            placeholder="enter your username"
-            onChange={(e) => setusername(e.target.value)}
+            placeholder="Enter your username"
+            onChange={(e) => setUsername(e.target.value)}
           />
         </label>
         <br />
 
         <label>
-          password:
+          Password:
           <input
             type="password"
             value={password}
-            placeholder="password"
-            onChange={(e) => setpassword(e.target.value)}
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
           />
         </label>
         <br />
-        <button type="submit">Login</button>
+        <button type="submit" className="login-button">
+          Login
+        </button>
       </form>
-      {error !== "" ?? <h3>Error during login</h3>}
-    </>
+      {error && <h3 className="error-message">{error}</h3>}
+    </div>
   );
 };
 

@@ -12,8 +12,9 @@ function ProductForm() {
   const [description, setDescription] = useState("");
   const [orderItemList, setOrderItemList] = useState([]);
   const [orderItem, setOrderItem] = useState([]);
-  //  const [colors, setColors] = useState("")
+  const [colors, setColors] = useState("")
   const [image, setImage] = useState("");
+  const [product, setproduct] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,6 +37,9 @@ function ProductForm() {
           setDescription(item.description);
           setOrderItem(item.orderItem || []);
           setImage(item.image);
+          setColors(item.color);
+          setproduct(item.products);
+          
         })
         .catch((ex) => console.error(ex));
     }
@@ -54,7 +58,9 @@ function ProductForm() {
       manufacturer:manufacturer,
       description:description,
       orderItem:orderItem,
-      image:image,
+      products:product,
+      colors:colors,
+    
     };
     const verb = id ? "put" : "post";
 

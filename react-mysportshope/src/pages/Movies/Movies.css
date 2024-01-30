@@ -1,0 +1,53 @@
+.movie_list_controle {
+  display: grid;
+  grid-template-columns: repeat(5, 250px);
+  justify-items: center;
+  justify-content: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin: 40px auto;
+  gap: 40px 50px;
+  /* transition: 0.3s; */
+}
+
+
+@media (max-width: 1399px) {
+  .movie_list_controle {
+    grid-template-columns: repeat(4, 220px);
+
+  }
+}
+@media (max-width: 1199px) {
+  .movie_list_controle {
+    grid-template-columns: repeat(3, 200px);
+
+
+  }
+}
+@media (max-width: 1011px) {
+  .movie_list_controle {
+    grid-template-columns: repeat(3, 200px);
+
+   
+  }
+}
+@media (max-width: 950px) {
+  .movie_list_controle {
+    grid-template-columns: repeat(3, 200px);
+
+  }
+}
+
+@media (max-width: 767px) {
+  .movie_list_controle {
+    grid-template-columns: repeat(2, 200px);
+
+
+  }
+}
+@media (max-width: 560px) {
+  .movie_list_controle {
+    grid-template-columns: repeat(1, 200px);
+  }
+
+}

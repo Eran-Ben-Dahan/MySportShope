@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
   height: 80px;
   font-size: 30px;
   background-color: #17232e;
@@ -172,3 +172,63 @@
     margin-top: 60px;
 }
 }
+
+ */
+
+
+
+
+ /* NavBar.css */
+
+/* Navbar Container Styles */
+.navbar {
+  padding: 10px;
+}
+
+/* Brand Styles */
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+/* NavDropdown Styles */
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: #fff !important; /* Set text color for links */
+}
+
+/* Active Link Styles */
+.nav-link.active {
+  font-weight: bold;
+}
+
+/* NavDropdown Title Styles */
+.nav-dropdown-title {
+  font-weight: bold;
+}
+
+/* NavDropdown Item Styles */
+.nav-dropdown-item {
+  color: #333; /* Set text color for dropdown items */
+}
+
+/* NavDropdown on Hover Styles */
+.nav-dropdown:hover {
+  background-color: #555; /* Change background color on hover */
+}
+
+/* TopNavLink Styles */
+.top-nav-link {
+  margin-left: auto;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.top-nav-link:hover {
+  background-color: #555;
+  
+}
+
