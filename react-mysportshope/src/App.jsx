@@ -6,12 +6,11 @@ import Login from "./components/Login/Login";
 import BackOffice from "./components/BackOffice/BackOffice";
 import ProductList from "./components/ProductList/ProductList";
 import ProductForm from "./components/ProductForm/ProductForm";
-// import { useSelector } from "react-redux";
 import React from "react";
 import NavBar from "./components/nav/NavBar";
 import About from "./pages/About/About";
-
-
+import Footer from "./components/Footer/Footer.jsx";
+// import { useSelector } from "react-redux";
 function App() {
   // const isDark = useSelector((state)=> state.theme.isDark)
   // const Home = () => <div>Home Page</div>;
@@ -24,7 +23,8 @@ function App() {
   // );
 
   return (
-    <div>
+    
+    <div >
         <NavBar />
         <Routes>
           <Route path="/Login" element={<Login />} />
@@ -36,7 +36,7 @@ function App() {
           </Route>
           <Route path="/about" element={<About/>} />
         </Routes>
-      
+      <Footer/>
     </div>
   );
 }

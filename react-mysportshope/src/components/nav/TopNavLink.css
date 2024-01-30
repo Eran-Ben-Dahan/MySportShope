@@ -8,6 +8,6 @@
 
 .show > .nav-link,
 .nav-link.active {
-/* background-color: #ecba25!important; */
-/* border-radius: 10px; */
+background-color: #4925ec!important; 
+ border-radius: 10px;
 }

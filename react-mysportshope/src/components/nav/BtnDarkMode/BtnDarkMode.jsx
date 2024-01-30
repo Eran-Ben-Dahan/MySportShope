@@ -1,7 +1,7 @@
 // import { Switch } from "@mantine/core";
 // import { IconSun, IconMoonStars } from "@tabler/icons";
 // import { useDispatch } from "react-redux";
-// import { toggleDark } from "../../features/commentsSlice/commentsSlice";
+// import { toggleDark } from "../../../features/theme/theme-slice";
 
 // export default function SwitchToggle() {
 //   // const isDark = useSelector((state) => state.theme.isDark);
