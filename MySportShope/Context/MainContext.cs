@@ -10,6 +10,7 @@ namespace MySportShope.API.Context
         {
 
         }
+        public DbSet<Cart> Cart { get; set; }
         public DbSet<BoxSize> BoxSizes { get; set; }
         public DbSet<Category> Categorys { get; set; }
         public DbSet<Client> Clients { get; set; }
@@ -31,7 +32,20 @@ namespace MySportShope.API.Context
             modelBuilder.Entity<User>().HasData(
                 new User { ID = 1, Username = "Eran", Password = "1234", LastLogin = DateTime.Now, Type = UserType.Admin }
                 );
+            modelBuilder.Entity<User>()
+                  .HasOne(e => e.Cart)
+                  .WithOne(e => e.User)
+                  .HasForeignKey<Cart>(e => e.UserId)
+                  .IsRequired();
 
+            modelBuilder.Entity<Product>()
+                .Property(p => p.AddedOn)
+                .HasDefaultValueSql("GETDATE()");
+
+            modelBuilder.Entity<Cart>().HasData(
+                new Cart { CartId = 1, UserId = 1, CartQuantity = 1 },
+                new Cart { CartId = 2, UserId = 2, CartQuantity = 5 }
+                );
 
 
             modelBuilder.Entity<BoxSize>().HasData(

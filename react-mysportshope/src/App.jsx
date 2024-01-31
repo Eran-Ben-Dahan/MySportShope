@@ -10,6 +10,7 @@ import React from "react";
 import NavBar from "./components/nav/NavBar";
 import About from "./pages/About/About";
 import Footer from "./components/Footer/Footer.jsx";
+import Home from "./pages/Home/Home.jsx";
 // import { useSelector } from "react-redux";
 function App() {
   // const isDark = useSelector((state)=> state.theme.isDark)
@@ -28,12 +29,13 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/Login" element={<Login />} />
-          <Route path="*" element={<div>Home</div>} />
+          <Route path="*" element={<Home/>} />
           <Route path="/backoffice" element={ <Protected> <BackOffice /></Protected> } >
             <Route path="product" element={<ProductList />} />
             <Route path="product/new" element={<ProductForm />} />
             <Route path="product/edit/:id" element={<ProductForm />} />
           </Route>
+          <Route path="/products/:PpersonType/:category/:subcategory" element={<Home />} />
           <Route path="/about" element={<About/>} />
         </Routes>
       <Footer/>

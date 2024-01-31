@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./NavBar.css";
 import TopNavLink from "./TopNavLink";
 import Logo from "../Logo/Logo";
-
+import Login from "../Login/Login";
 
 const NavBar = () => {
   const personeTypes = useSelector((state) => state.person.data);
@@ -22,12 +22,10 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       {" "}
-   
       <div className="container-fluid">
         <a className="navbar-brand text-white" href="/">
           {" "}
-          
-          <Logo/>
+          <Logo />
         </a>
 
         <div className="collapse navbar-collapse" id="navbarNav">
@@ -62,7 +60,11 @@ const NavBar = () => {
               </li>
             ))}
             <TopNavLink to="/about" label="About" />
-           
+            <button
+              className="btn btn-outline-light"
+              onClick={() => navigate("/Login")} >
+              Login
+            </button>
           </ul>
         </div>
       </div>
@@ -71,22 +73,6 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import { useEffect } from "react";
 // import NavDropdown from "react-bootstrap/NavDropdown";
@@ -129,4 +115,3 @@ export default NavBar;
 // NavBar.jsx
 
 // NavBar.jsx
-

@@ -19,5 +19,6 @@ namespace MySportShope.API.Models
         public int PersoneTypeID { get; set; }
         public List<OrderItem> OrderItems { get; set; }
         public double Price { get; set; }
+        public DateTime AddedOn { get; set; }
     }
 }
