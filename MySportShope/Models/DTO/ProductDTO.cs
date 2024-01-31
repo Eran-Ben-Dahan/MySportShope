@@ -12,5 +12,8 @@
         public ICollection<Image> Images { get; set; }
         public int PersoneTypeID { get; set; }
         public double Price { get; set; }
+        public int ProductID { get; set; }
+        public int CategoryID { get; internal set; }
+     
     }
 }

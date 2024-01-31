@@ -15,7 +15,7 @@ namespace API.Models.DTO
         public List<Cart> Cart { get; private set; }
         public List<Category> Categories { get; private set; }
         public List<Client> Client { get; private set; }
-        public List<personeType> PersoneType { get; private set; }
+        public List<PersoneType> PersoneType { get; private set; }
         public List<Image> Image { get; private set; }
         public List<Orders> Orders { get; private set; }
         public List<OrderItem> GrderItem { get; private set; }

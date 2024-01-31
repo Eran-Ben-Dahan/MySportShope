@@ -20,5 +20,6 @@ namespace MySportShope.API.Models
         public List<OrderItem> OrderItems { get; set; }
         public double Price { get; set; }
         public DateTime AddedOn { get; set; }
+        public int CategoryID { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace MySportShope.API.Context
         public DbSet<Color> Colors { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
-        public DbSet<Orders> Orderss { get; set; }
+        public DbSet<Orders> Orders { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ShippingAddres> ShippingAddres { get; set; }
@@ -28,6 +28,7 @@ namespace MySportShope.API.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
 
             modelBuilder.Entity<User>().HasData(
                 new User { ID = 1, Username = "Eran", Password = "1234", LastLogin = DateTime.Now, Type = UserType.Admin }
@@ -92,13 +93,19 @@ namespace MySportShope.API.Context
                 new ItemSize { ID = 1, SizeName = "49", ProductID = 1 }
                 );
             modelBuilder.Entity<OrderItem>().HasData(
-                new OrderItem { ID = 1, OrdersID = 1, productID = 1, Price = 25.5, Quantity = 2 },
-                new OrderItem { ID = 2, OrdersID = 1, productID = 2, Price = 25.5, Quantity = 2 },
-                new OrderItem { ID = 3, OrdersID = 2, productID = 2, Price = 25.5, Quantity = 2 }
+                new OrderItem { ID = 1, OrdersID = 1, productID = 1, Price = 25.5, Quantity = 2, CartID = 1 },
+                new OrderItem { ID = 2, OrdersID = 1, productID = 2, Price = 30, Quantity = 2, CartID = 1 },
+                new OrderItem { ID = 3, OrdersID = 2, productID = 2, Price = 12, Quantity = 2, CartID = 1 }
                 );
+        //    modelBuilder.Entity<Orders>()
+        //.HasOne(o => o.Cart) // This assumes 'Order' has a navigation property 'Cart'
+        //.WithMany(c => c.Orders) // This assumes 'Cart' has a collection navigation property 'Orders'
+        //.HasForeignKey(o => o.CartID) // 'CartID' is the foreign key in 'Order' pointing to 'Cart'
+        //.OnDelete(DeleteBehavior.NoAction);
+
             modelBuilder.Entity<Orders>().HasData(
-                new Orders { ID = 1, ClientID = 1, ShippingAddresID = 1, PaymentID = 1, OrderDate = DateTime.Now, SpecialDiscount = 0 },
-                new Orders { ID = 2, ClientID = 1, ShippingAddresID = 1, PaymentID = 1, OrderDate = DateTime.Now, SpecialDiscount = 0 }
+                new Orders { ID = 1, ClientID = 1, ShippingAddresID = 1, PaymentID = 1, OrderDate = DateTime.Now, SpecialDiscount = 0, CartID = 1 },
+                new Orders { ID = 2, ClientID = 1, ShippingAddresID = 1, PaymentID = 1, OrderDate = DateTime.Now, SpecialDiscount = 0, CartID = 1 }
                 );
 
             modelBuilder.Entity<Payment>().HasData(
@@ -113,8 +120,8 @@ namespace MySportShope.API.Context
             );
 
             modelBuilder.Entity<Product>().HasData(
-                new Product { ID = 1, Name = "Sport Shoes ", Manufacturer = "Nike", SubCategoryID = 1, PersoneTypeID = 1, Description = "A beautiful and comfortable shoe"},
-                new Product { ID = 2, Name = "Sport Tshert ", Manufacturer = "Nike", SubCategoryID = 1, PersoneTypeID = 1, Description = "Butebull Tshert"},
+                new Product { ID = 1, Name = "Sport Shoes ", Manufacturer = "Nike", SubCategoryID = 1, PersoneTypeID = 1, Description = "A beautiful and comfortable shoe" },
+                new Product { ID = 2, Name = "Sport Tshert ", Manufacturer = "Nike", SubCategoryID = 1, PersoneTypeID = 1, Description = "Butebull Tshert" },
                 new Product { ID = 3, Name = "Ball ", Manufacturer = "Nike", SubCategoryID = 1, PersoneTypeID = 1, Description = "Ball" }
                 );
 
@@ -126,7 +133,7 @@ namespace MySportShope.API.Context
                 new SubCategory { ID = 1, CategoryID = 1, Name = "Running shoes" },
                 new SubCategory { ID = 2, CategoryID = 1, Name = "Basketball shoes" }
             );
-         
+
         }
     }
 }

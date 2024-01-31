@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MySportShope.API.Context;
 
@@ -11,9 +12,10 @@ using MySportShope.API.Context;
 namespace MySportShope.API.Migrations
 {
     [DbContext(typeof(MainContext))]
-    partial class MainContextModelSnapshot : ModelSnapshot
+    [Migration("20240131211615_AddOn1")]
+    partial class AddOn1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -431,7 +433,7 @@ namespace MySportShope.API.Migrations
                             ID = 1,
                             CartID = 1,
                             ClientID = 1,
-                            OrderDate = new DateTime(2024, 2, 1, 0, 23, 23, 446, DateTimeKind.Local).AddTicks(5206),
+                            OrderDate = new DateTime(2024, 1, 31, 23, 16, 14, 700, DateTimeKind.Local).AddTicks(7805),
                             PaymentID = 1,
                             ShippingAddresID = 1,
                             SpecialDiscount = 0
@@ -441,7 +443,7 @@ namespace MySportShope.API.Migrations
                             ID = 2,
                             CartID = 1,
                             ClientID = 1,
-                            OrderDate = new DateTime(2024, 2, 1, 0, 23, 23, 446, DateTimeKind.Local).AddTicks(5230),
+                            OrderDate = new DateTime(2024, 1, 31, 23, 16, 14, 700, DateTimeKind.Local).AddTicks(7843),
                             PaymentID = 1,
                             ShippingAddresID = 1,
                             SpecialDiscount = 0
@@ -483,7 +485,7 @@ namespace MySportShope.API.Migrations
                             CardMonth = 2,
                             CardNumber = 134456775,
                             CardYear = 2024,
-                            PaymentDate = new DateTime(2024, 2, 1, 0, 23, 23, 446, DateTimeKind.Local).AddTicks(5244)
+                            PaymentDate = new DateTime(2024, 1, 31, 23, 16, 14, 700, DateTimeKind.Local).AddTicks(7866)
                         });
                 });
 
@@ -539,9 +541,6 @@ namespace MySportShope.API.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
-                    b.Property<int>("CategoryID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -576,7 +575,6 @@ namespace MySportShope.API.Migrations
                         {
                             ID = 1,
                             AddedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CategoryID = 0,
                             Description = "A beautiful and comfortable shoe",
                             Manufacturer = "Nike",
                             Name = "Sport Shoes ",
@@ -588,7 +586,6 @@ namespace MySportShope.API.Migrations
                         {
                             ID = 2,
                             AddedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CategoryID = 0,
                             Description = "Butebull Tshert",
                             Manufacturer = "Nike",
                             Name = "Sport Tshert ",
@@ -600,7 +597,6 @@ namespace MySportShope.API.Migrations
                         {
                             ID = 3,
                             AddedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CategoryID = 0,
                             Description = "Ball",
                             Manufacturer = "Nike",
                             Name = "Ball ",
@@ -728,7 +724,7 @@ namespace MySportShope.API.Migrations
                         {
                             ID = 1,
                             ClientID = 0,
-                            LastLogin = new DateTime(2024, 2, 1, 0, 23, 23, 445, DateTimeKind.Local).AddTicks(174),
+                            LastLogin = new DateTime(2024, 1, 31, 23, 16, 14, 699, DateTimeKind.Local).AddTicks(3207),
                             Password = "1234",
                             Type = 999,
                             Username = "Eran"

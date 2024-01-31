@@ -23,11 +23,14 @@ const ProductItem = ({ data }) => {
 
   const styleBtnRemoveCart = {
     background: "white",
-    color: "red",a
+    color: "red",
     border: "2px solid red",
     borderRadius: "5px",
     width: "32px",
   };
+
+  
+  
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -53,7 +56,7 @@ const ProductItem = ({ data }) => {
       >
         <Stack>
           <Card style={{ width: "19rem", display: "flex" }}>
-            {data.galleryImage?.map((image) => (
+            {data.image?.map((image) => (
               <Card.Img
                 key={image.id}
                 variant="top"

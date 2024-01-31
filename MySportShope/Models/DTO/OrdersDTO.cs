@@ -1,16 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MyProject.API.Models.DTO
+namespace MySportShope.API.Models.DTO
 {
-    public class OrderDTO
+    public class OrdersDTO
     {
         public int ID { get; set; } 
         public DateTime OrderDate { get; set; }
-        public bool IsPaid { get; set; }
-        public int CustomerID { get; set; }
+        public bool PaymentID { get; set; }
+        public int ClientID { get; set; }
         public int CartID { get; set; }
         public int ShippingAddressID { get; set; }
-  
+        public List<OrderItem> OrderItems { get; set; }
+
     }
 }
 

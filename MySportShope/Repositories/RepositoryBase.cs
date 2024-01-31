@@ -19,6 +19,13 @@ namespace MySportShope.API.Repositories
             Save();
             return newItem.Entity;
         }
+        public async Task<T> CreateWith(T item, IRepositoryBase<T>.CreateWithDelegate beforeSave)
+        {
+            beforeSave.Invoke(_context);
+            var newItem = await _context.Set<T>().AddAsync(item);
+            Save();
+            return newItem.Entity;
+        }
 
         public void Delete(T item)
         {

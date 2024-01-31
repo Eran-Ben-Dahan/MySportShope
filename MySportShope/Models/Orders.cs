@@ -15,6 +15,7 @@ namespace MySportShope.API.Models
         public int SpecialDiscount { get; set; }
         public List<OrderItem> OrderItems { get; set; }
         public Cart Cart { get; set; }
+        public int CartID { get; set; }
 
     }
 }

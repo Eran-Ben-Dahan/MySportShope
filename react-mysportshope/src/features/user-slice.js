@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import api, { fetchUser } from "../utils/api";
 import Swal from "sweetalert2";
 
+
 const userURL = "Login/GetToken";
 
 export const loginUser = createAsyncThunk(
@@ -15,7 +16,7 @@ export const loginUser = createAsyncThunk(
 export const updateCart = createAsyncThunk(
   "user/updateCart",
   async ({ itemId, add }, thunkAPI) => {
-    const updateURL = "https://localhost:7182/api/Cart/update";
+    const updateURL = "https://localhost:7291/api/Cart/update";
     let { user } = thunkAPI.getState();
     let itemQuantity =
       user.user.cart.orderItems.find((item) => item.product.id === itemId)

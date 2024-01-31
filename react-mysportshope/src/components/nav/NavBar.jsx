@@ -1,23 +1,23 @@
-import React, { useEffect } from "react";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchPersoneType } from "../../features/personType-slice";
-import { useNavigate } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./NavBar.css";
-import TopNavLink from "./TopNavLink";
-import Logo from "../Logo/Logo";
-import Login from "../Login/Login";
+import React, { useEffect } from "react"
+import NavDropdown from "react-bootstrap/NavDropdown"
+import { useDispatch, useSelector } from "react-redux"
+import { fetchPersoneType } from "../../features/personType-slice"
+import { useNavigate } from "react-router-dom"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "./NavBar.css"
+import TopNavLink from "./TopNavLink"
+import Logo from "../Logo/Logo"
+import Search from "../../components/search/SearchProduct"
 
 const NavBar = () => {
-  const personeTypes = useSelector((state) => state.person.data);
+  const personeTypes = useSelector((state) => state.person.data)
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   useEffect(() => {
-    dispatch(fetchPersoneType());
-  }, [dispatch]);
+    dispatch(fetchPersoneType())
+  }, [dispatch])
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
@@ -62,17 +62,19 @@ const NavBar = () => {
             <TopNavLink to="/about" label="About" />
             <button
               className="btn btn-outline-light"
-              onClick={() => navigate("/Login")} >
+              onClick={() => navigate("/Login")}
+            >
               Login
             </button>
+            <Search />
           </ul>
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar
 
 // import { useEffect } from "react";
 // import NavDropdown from "react-bootstrap/NavDropdown";
